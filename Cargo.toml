@@ -1,0 +1,9 @@
+[package]
+name = "setjmp"
+version = "0.1.0"
+authors = ["Gabriela Alexandra Moldovan <gabi_250@live.com>"]
+edition = "2018"
+
+[lib]
+name = "setjmp_rs"
+path = "src/lib.rs"
