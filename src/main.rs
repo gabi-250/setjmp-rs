@@ -1,18 +1,14 @@
-#![feature(asm)]
+#![feature(llvm_asm)]
 
 use setjmp_rs::{longjmp, setjmp, JmpBuf};
 
-static mut env: JmpBuf = JmpBuf::new();
-
 fn main() {
-    unsafe {
-        if let Some(v) = setjmp!(env) {
-            println!("longjump value={}", v);
-        } else {
-            println!("{:?}", env);
-        }
+    let mut env = JmpBuf::new();
+    let val = setjmp!(env);
 
-        println!("calling longjmp!...");
+    println!("val is {:?}", val);
+
+    if val.is_none() {
         longjmp!(env, 124);
     }
 }
