@@ -1,3 +1,3 @@
 # setjmp-rs
 
-A `setjmp`/`longjmp` implementation for x86-64.
+## :headstone: This repository has been moved to `codeberg.org/gabi-250` :headstone:
